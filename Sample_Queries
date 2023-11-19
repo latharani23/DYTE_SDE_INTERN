@@ -1,0 +1,24 @@
+1) Find all logs with the level set to "error":
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "level": "error"
+}' http://localhost:3000/query
+
+
+2) Search for logs with the message containing the term "Failed to connect":
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "message": "Failed to connect"
+}' http://localhost:3000/query
+
+3) Retrieve all logs related to resourceId "server-1234":
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "resourceId": "server-1234"
+}' http://localhost:3000/query
+
+4) Filter logs between the timestamp "2023-09-10T00:00:00Z" and "2023-09-15T23:59:59Z":
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "timestamp": "2023-09-10T00:00:00Z"
+}' http://localhost:3000/query
